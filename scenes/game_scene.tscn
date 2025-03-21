@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://6nc68ts75d3p"]
+[gd_scene load_steps=5 format=3 uid="uid://6nc68ts75d3p"]
 
 [ext_resource type="Script" uid="uid://derwmxduoxsjk" path="res://scripts/game_scene.gd" id="1_onqr8"]
 [ext_resource type="PackedScene" uid="uid://c3dmov37elpgx" path="res://scenes/army/army_controller.tscn" id="1_w5aja"]
 [ext_resource type="AudioStream" uid="uid://bdtnidv3fy72e" path="res://assets/sounds/metronome.wav" id="3_ycayy"]
+[ext_resource type="AudioStream" uid="uid://141hw1cb17vs" path="res://assets/sounds/xylophone.wav" id="4_bw6k5"]
 
 [node name="GameScene" type="Node2D"]
 script = ExtResource("1_onqr8")
@@ -15,3 +16,6 @@ autostart = true
 
 [node name="BeatSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_ycayy")
+
+[node name="InputSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_bw6k5")
