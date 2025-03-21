@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://dietatsh86h4s"]
+
+[ext_resource type="Texture2D" uid="uid://dxlt46koorcr3" path="res://assets/sprites/Patapon.png" id="1_1lbqp"]
+[ext_resource type="Script" uid="uid://csskq6kg27i3r" path="res://scripts/unit.gd" id="1_fj20i"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1lbqp"]
+radius = 37.0
+height = 74.0
+
+[node name="Unit" type="CharacterBody2D"]
+script = ExtResource("1_fj20i")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.15, 0.137)
+texture = ExtResource("1_1lbqp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 38)
+shape = SubResource("CapsuleShape2D_1lbqp")
