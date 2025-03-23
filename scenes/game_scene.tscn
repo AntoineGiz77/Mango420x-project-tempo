@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://6nc68ts75d3p"]
+[gd_scene load_steps=9 format=3 uid="uid://6nc68ts75d3p"]
 
 [ext_resource type="Script" uid="uid://derwmxduoxsjk" path="res://scripts/game_scene.gd" id="1_onqr8"]
 [ext_resource type="PackedScene" uid="uid://c3dmov37elpgx" path="res://scenes/army/army_controller.tscn" id="1_w5aja"]
@@ -7,6 +7,7 @@
 [ext_resource type="AudioStream" uid="uid://141hw1cb17vs" path="res://assets/sounds/xylophone.wav" id="4_bw6k5"]
 [ext_resource type="PackedScene" uid="uid://bbcu8ugqfj44v" path="res://scenes/UI/RythmFeedback.tscn" id="4_rurhu"]
 [ext_resource type="AudioStream" uid="uid://cbma6nnxcid08" path="res://assets/sounds/spongebob_bwomp.mp3" id="7_kk2rg"]
+[ext_resource type="AudioStream" uid="uid://3kug6loadnr6" path="res://assets/sounds/Yeah.wav" id="8_b5spy"]
 
 [node name="GameScene" type="Node2D" node_paths=PackedStringArray("rhythm_manager", "rhythm_feedback")]
 script = ExtResource("1_onqr8")
@@ -32,3 +33,6 @@ stream = ExtResource("4_bw6k5")
 
 [node name="BadSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("7_kk2rg")
+
+[node name="PerfectSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_b5spy")

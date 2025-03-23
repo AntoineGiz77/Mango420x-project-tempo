@@ -66,11 +66,13 @@ func _input_correct(direction: String):
 func _on_perfect_input(direction: String):
 	print("¡Perfecto! Dirección: ", direction)
 	rhythm_feedback.show_feedback("perfect")  ## Muestra feedback visual para un input perfecto.
+	$PerfectSound.play() ## Suena un hombre gritando Yeah!
 
 ## NUEVO: Función llamada cuando el input es bueno.
 func _on_good_input(direction: String):
 	print("¡Bien! Dirección: ", direction)
 	rhythm_feedback.show_feedback("good")  ## Muestra feedback visual para un input bueno.
+	$InputSound.play()  ## Reproduce el sonido sutil (nota) cuando se hace una entrada correcta.
 
 ## NUEVO: Función llamada cuando el input es malo.
 func _on_bad_input(direction: String):
