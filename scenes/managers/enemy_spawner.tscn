@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://tnm5w1iei7qd"]
+
+[ext_resource type="Script" uid="uid://ryj320o6v0ac" path="res://scripts/managers/enemy_spawner.gd" id="1_b3rye"]
+[ext_resource type="PackedScene" uid="uid://cdsqkv347m4pf" path="res://scenes/enemies/basic_enemy.tscn" id="2_j01lu"]
+
+[node name="EnemySpawner" type="Node2D"]
+script = ExtResource("1_b3rye")
+enemy_scene = ExtResource("2_j01lu")
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="SpawnPosition" type="Marker2D" parent="."]
+position = Vector2(960, 475)

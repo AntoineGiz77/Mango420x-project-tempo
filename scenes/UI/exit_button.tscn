@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://cgdh6ngfnkafy"]
+
+[ext_resource type="Script" uid="uid://d37h7i17y53pi" path="res://scripts/UI/exit_button.gd" id="1_5su1s"]
+
+[node name="ExitButton" type="Button"]
+offset_right = 8.0
+offset_bottom = 8.0
+text = "Exit Zone"
+script = ExtResource("1_5su1s")
