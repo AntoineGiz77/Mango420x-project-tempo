@@ -1,14 +1,23 @@
-[gd_scene load_steps=5 format=3 uid="uid://6nc68ts75d3p"]
+[gd_scene load_steps=7 format=3 uid="uid://6nc68ts75d3p"]
 
 [ext_resource type="Script" uid="uid://derwmxduoxsjk" path="res://scripts/game_scene.gd" id="1_onqr8"]
 [ext_resource type="PackedScene" uid="uid://c3dmov37elpgx" path="res://scenes/army/army_controller.tscn" id="1_w5aja"]
+[ext_resource type="Script" uid="uid://dqqb7bvqxetk8" path="res://scripts/RhytmManager.gd" id="3_y3j0m"]
 [ext_resource type="AudioStream" uid="uid://bdtnidv3fy72e" path="res://assets/sounds/metronome.wav" id="3_ycayy"]
 [ext_resource type="AudioStream" uid="uid://141hw1cb17vs" path="res://assets/sounds/xylophone.wav" id="4_bw6k5"]
+[ext_resource type="PackedScene" uid="uid://bbcu8ugqfj44v" path="res://scenes/UI/RythmFeedback.tscn" id="4_rurhu"]
 
-[node name="GameScene" type="Node2D"]
+[node name="GameScene" type="Node2D" node_paths=PackedStringArray("rhythm_manager", "rhythm_feedback")]
 script = ExtResource("1_onqr8")
+rhythm_manager = NodePath("RythmManager")
+rhythm_feedback = NodePath("RythmFeedback")
 
 [node name="ArmyController" parent="." instance=ExtResource("1_w5aja")]
+
+[node name="RythmManager" type="Node2D" parent="."]
+script = ExtResource("3_y3j0m")
+
+[node name="RythmFeedback" parent="." instance=ExtResource("4_rurhu")]
 
 [node name="BeatTimer" type="Timer" parent="."]
 wait_time = 0.5
