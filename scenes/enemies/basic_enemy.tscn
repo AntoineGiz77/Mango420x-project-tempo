@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://cdsqkv347m4pf"]
+
+[ext_resource type="Script" uid="uid://2qbmgdxvyyd6" path="res://scripts/enemies/basic_enemy.gd" id="1_7jpia"]
+[ext_resource type="Texture2D" uid="uid://b74r5i5wb6p3x" path="res://assets/sprites/Fenrir.png" id="2_8xi43"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ibjif"]
+size = Vector2(868, 389)
+
+[node name="BasicEnemy" type="CharacterBody2D"]
+script = ExtResource("1_7jpia")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_8xi43")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-62, 24.5)
+shape = SubResource("RectangleShape2D_ibjif")

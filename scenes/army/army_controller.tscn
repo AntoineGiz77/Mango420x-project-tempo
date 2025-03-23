@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://c3dmov37elpgx"]
 
-[ext_resource type="Script" uid="uid://qltw7yl72v6u" path="res://scripts/army_controller.gd" id="1_0ks41"]
+[ext_resource type="Script" uid="uid://qltw7yl72v6u" path="res://scripts/army/army_controller.gd" id="1_0ks41"]
 [ext_resource type="PackedScene" uid="uid://dietatsh86h4s" path="res://scenes/army/unit.tscn" id="2_kvr2l"]
 
 [node name="ArmyController" type="Node2D"]

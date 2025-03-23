@@ -21,13 +21,16 @@ func register_beat():
 
 ## Función para evaluar la precisión del input.
 ## Recibe la dirección del input y emite la señal correspondiente según el margen de tiempo.
-func evaluate_input(direction: String):
+func evaluate_input(direction: String) -> String:
 	var current_time = Time.get_ticks_msec() / 1000.0  # Tiempo actual en segundos.
 	var time_since_beat = abs(current_time - last_beat_time)  # Diferencia con el último beat.
 
 	if time_since_beat <= perfect_margin:
 		perfect_input.emit(direction)  # Input perfecto.
+		return "perfect"
 	elif time_since_beat <= good_margin:
 		good_input.emit(direction)  # Input bueno.
+		return "good"
 	else:
 		bad_input.emit(direction)  # Input malo.
+		return "bad"

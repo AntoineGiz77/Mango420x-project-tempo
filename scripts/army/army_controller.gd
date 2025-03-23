@@ -25,7 +25,7 @@ func spawn_units(count: int):
 
 ## Función que hace saltar las unidades cuando el jugador hace la entrada correcta.
 ## Recibe la dirección del input del jugador para realizar la acción.
-func jump_units(direction: String):
+func jump_units(_direction: String):
 	# Itera por cada unidad en el contenedor y les hace ejecutar su salto.
 	for unit in $UnitsContainer.get_children():
 		unit.jump()  ## Llama a la función de salto de cada unidad. Puedes modificar cómo se realiza el salto.

@@ -9,10 +9,9 @@ signal beat
 ## Propiedades
 @export var waiting_for_input = false  ## Si estamos esperando la entrada del jugador (true/false).
 @export var input_timer = 0.0  ## Temporizador que controla el intervalo entre beats.
-
-## NUEVO: Propiedades para el RhythmManager y RhythmFeedback.
 @export var rhythm_manager: RhythmManager  # Asigna el RhythmManager desde el editor.
 @export var rhythm_feedback: RhythmFeedback  # Asigna el RhythmFeedback desde el editor.
+@export var enemy: BasicEnemy
 
 ## Método llamado cuando la escena se inicializa.
 ## Este método configura el temporizador y comienza el sonido del metrónomo.
@@ -55,12 +54,23 @@ func _process(_delta):
 ## Esta función se ejecuta cuando el jugador presiona una tecla correctamente.
 ## Llama al ArmyController para hacer saltar las unidades.
 ## También reproduce el sonido sutil y marca que ya no se espera una nueva entrada.
+## Función para manejar un input correcto.
 func _input_correct(direction: String):
-	var army_controller = $ArmyController  ## Asegúrate de que la ruta sea correcta.
-	army_controller.jump_units(direction)  ## Llama a la función de salto de las unidades.
-	rhythm_manager.evaluate_input(direction)  ## NUEVO: Evalúa la precisión del input.
-	$InputSound.play()  ## Reproduce el sonido sutil (nota) cuando se hace una entrada correcta.
-	waiting_for_input = false  ## Termina de esperar la entrada.
+	var army_controller = $ArmyController
+	army_controller.jump_units(direction)  ## Hace saltar a las unidades.
+	
+	## Evalúa la precisión del input y obtiene el resultado.
+	var evaluation = rhythm_manager.evaluate_input(direction)
+	
+	## Inflige daño al enemigo según la evaluación.
+	if evaluation == "perfect":
+		enemy.take_damage(20)  ## Daño mayor por un input perfecto.
+	elif evaluation == "good":
+		enemy.take_damage(10)  ## Daño menor por un input bueno.
+	
+	$InputSound.play()
+	waiting_for_input = false
+
 
 ## NUEVO: Función llamada cuando el input es perfecto.
 func _on_perfect_input(direction: String):
