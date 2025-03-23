@@ -76,3 +76,4 @@ func _on_good_input(direction: String):
 func _on_bad_input(direction: String):
 	print("¡Mal! Dirección: ", direction)
 	rhythm_feedback.show_feedback("bad")  ## Muestra feedback visual para un input malo.
+	$BadSound.play() ## Reproduce feedback negativo al jugar mal
