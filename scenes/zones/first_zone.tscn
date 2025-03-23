@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://ddjvrkl4yqjjm"]
+[gd_scene load_steps=7 format=3 uid="uid://ddjvrkl4yqjjm"]
 
 [ext_resource type="Script" uid="uid://c65v1j5qcrl68" path="res://scripts/zones/first_zone.gd" id="1_00coo"]
 [ext_resource type="Texture2D" uid="uid://b4thegxia5a6e" path="res://assets/sprites/stolenBG.webp" id="1_0rtdl"]
 [ext_resource type="PackedScene" uid="uid://6nc68ts75d3p" path="res://scenes/game_scene.tscn" id="3_d6wb1"]
 [ext_resource type="PackedScene" uid="uid://tnm5w1iei7qd" path="res://scenes/managers/enemy_spawner.tscn" id="3_uskyc"]
+[ext_resource type="PackedScene" uid="uid://bul2pfdat7diw" path="res://scenes/enemies/Imp.tscn" id="4_uskyc"]
 [ext_resource type="PackedScene" uid="uid://cgdh6ngfnkafy" path="res://scenes/UI/exit_button.tscn" id="6_uskyc"]
 
 [node name="FirstZone" type="Node2D"]
@@ -15,6 +16,8 @@ scale = Vector2(1.18519, 1.18699)
 texture = ExtResource("1_0rtdl")
 
 [node name="EnemySpawner" parent="." instance=ExtResource("3_uskyc")]
+enemy_scene = ExtResource("4_uskyc")
+spawn_delay = 1.0
 
 [node name="GameScene" parent="." node_paths=PackedStringArray("enemy_spawner") instance=ExtResource("3_d6wb1")]
 position = Vector2(-478, 409)
