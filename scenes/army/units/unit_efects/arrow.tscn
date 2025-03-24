@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://bgxl6g80ws6jm"]
+
+[ext_resource type="Script" uid="uid://5pxw01psgpwx" path="res://scripts/army/units/unit_effects/arrow.gd" id="1_wsr76"]
+[ext_resource type="Texture2D" uid="uid://bpebgqt1xabv5" path="res://assets/sprites/weaponry/arrows/blue_arrow.png" id="2_boxrj"]
+
+[node name="Arrow" type="Node2D"]
+script = ExtResource("1_wsr76")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_boxrj")

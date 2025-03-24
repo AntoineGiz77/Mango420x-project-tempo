@@ -1,7 +1,24 @@
 [gd_scene load_steps=4 format=3 uid="uid://dietatsh86h4s"]
 
-[ext_resource type="Texture2D" uid="uid://dxlt46koorcr3" path="res://assets/sprites/Patapon.png" id="1_1lbqp"]
 [ext_resource type="Script" uid="uid://csskq6kg27i3r" path="res://scripts/army/unit.gd" id="1_fj20i"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1lbqp"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"attack",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"death",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1lbqp"]
 radius = 37.0
@@ -10,9 +27,10 @@ height = 74.0
 [node name="Unit" type="CharacterBody2D"]
 script = ExtResource("1_fj20i")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.15, 0.137)
-texture = ExtResource("1_1lbqp")
+sprite_frames = SubResource("SpriteFrames_1lbqp")
+animation = &"attack"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 38)

@@ -52,7 +52,7 @@ func _on_enemy_spawned(enemy: BasicEnemy):
 ## Evalúa la precisión del input y aplica daño.
 func _input_correct(direction: String):
 	if can_attack:
-		$ArmyController.jump_units(direction)
+		$ArmyController.attack_units()
 		var evaluation = rhythm_manager.evaluate_input(direction)
 		if current_enemy:
 			var damage = 20 if evaluation == "perfect" else 10 if evaluation == "good" else 0
