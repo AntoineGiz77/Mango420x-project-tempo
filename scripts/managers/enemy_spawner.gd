@@ -32,4 +32,5 @@ func spawn_enemy():
 
 func _on_enemy_defeated():
 	current_enemy = null
-	$Timer.start()
+	await get_tree().create_timer(1.0).timeout  # Espera 1 segundo antes de spawnear otro
+	$Timer.start()  # Reactiva el temporizador para spawnear otro enemigo

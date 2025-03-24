@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://b4thegxia5a6e" path="res://assets/sprites/stolenBG.webp" id="1_0rtdl"]
 [ext_resource type="PackedScene" uid="uid://6nc68ts75d3p" path="res://scenes/game_scene.tscn" id="3_d6wb1"]
 [ext_resource type="PackedScene" uid="uid://tnm5w1iei7qd" path="res://scenes/managers/enemy_spawner.tscn" id="3_uskyc"]
-[ext_resource type="PackedScene" uid="uid://bul2pfdat7diw" path="res://scenes/enemies/Imp.tscn" id="4_uskyc"]
+[ext_resource type="PackedScene" uid="uid://ugqeb7427vob" path="res://scenes/enemies/imp.tscn" id="4_uskyc"]
 [ext_resource type="PackedScene" uid="uid://cgdh6ngfnkafy" path="res://scenes/UI/exit_button.tscn" id="6_uskyc"]
 
 [node name="FirstZone" type="Node2D"]

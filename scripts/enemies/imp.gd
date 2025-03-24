@@ -1,18 +1,10 @@
-extends "res://scripts/enemies/basic_enemy.gd"
+class_name Imp
+extends BasicEnemy
 
-@onready var sprite: AnimatedSprite2D = $AnimatedSprite2D  # Referencia al sprite animado
+func _init():
+	max_health = 50  # Asegura que la vida se establezca antes de _ready()
+	attack_damage = 5  
 
 func _ready():
-	super()
-	sprite.play("idle")  # Inicia en animación de idle
-
-func take_damage(damage: int):
-	super(damage)
-	sprite.play("hurt")
-	await get_tree().create_timer(0.2).timeout  # Espera un poco antes de volver a idle
+	super()  # Llama a la versión base de _ready() después de definir los valores  
 	sprite.play("idle")
-
-func die():
-	sprite.play("death")
-	await sprite.animation_finished
-	super()
